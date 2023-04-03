@@ -1,0 +1,26 @@
+.album-cover {
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+}
+
+.album-songs {
+    padding: 0 0 0 20px;
+    height: 120px;
+    overflow: auto;
+}
+
+.likes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes div {
+    display: flex;
+    gap: 15px;
+}
+
+.likes div i {
+    cursor: pointer;
+}

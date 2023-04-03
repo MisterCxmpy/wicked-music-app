@@ -1,0 +1,38 @@
+.song {
+    color: white;
+    width: 220px;
+    height: 500px;
+    background: #202020;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.song > i {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+
+.liked {
+    color: rgb(255, 52, 52);
+    animation: size 3s infinite;
+}
+
+@keyframes size {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 0.9;
+    }
+
+    100% {
+        scale: 1;
+    }
+
+}
