@@ -1,8 +1,8 @@
 .song {
     color: white;
-    width: 220px;
-    height: 500px;
-    background: #202020;
+    width: 210px;
+    height: 560px;
+    background: #101010;
     padding: 15px;
     overflow-y: auto;
 }

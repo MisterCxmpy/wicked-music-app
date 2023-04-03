@@ -24,3 +24,11 @@
 .likes div i {
     cursor: pointer;
 }
+
+.thumbs-up {
+    color: rgb(0, 255, 0);
+}
+
+.thumbs-down {
+    color: rgb(255, 52, 52);
+}

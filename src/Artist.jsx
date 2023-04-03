@@ -5,13 +5,8 @@ import "./Artist.css";
 export default function Artist({ group, name, desc, album }) {
 
   function like(e) {
-    if (e.target.classList.contains("not-liked")) {
-      e.target.classList.remove('not-liked');
-      e.target.classList.add('liked');
-    } else if (e.target.classList.contains("liked")) {
-      e.target.classList.remove('liked');
-      e.target.classList.add('not-liked');
-    }
+    e.target.classList.toggle('liked');
+    e.target.classList.toggle('not-liked');
   }
 
   return (

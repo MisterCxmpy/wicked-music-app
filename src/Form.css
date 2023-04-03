@@ -1,0 +1,32 @@
+form {
+  width: 500px;
+  margin-top: 200px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form > div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+form input, textarea, label {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form button {
+  padding: 10px;
+  width: 150px;
+}

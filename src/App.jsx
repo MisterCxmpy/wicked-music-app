@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Artist from "./Artist";
-import "./App.css"
+import Form from "./Form";
+import "./App.css";
 
 export default function App() {
   return (
     <>
+      <h1 id="title">Wicked Music App</h1>
       <div className="artist-album">
         <Artist
           {...{
@@ -14,7 +16,7 @@ export default function App() {
             album: {
               albumCover:
                 "https://upload.wikimedia.org/wikipedia/en/7/7a/Minutes_to_Midnight_cover.jpg",
-              release: "Release: May 14, 2007",
+              release: "May 14, 2007",
               albumSongs: [
                 "What I've Done",
                 "Bleed It Out",
@@ -33,7 +35,7 @@ export default function App() {
             album: {
               albumCover:
                 "https://upload.wikimedia.org/wikipedia/en/6/60/Recovery_Album_Cover.jpg",
-              release: "Release: June 18, 2010",
+              release: "June 18, 2010",
               albumSongs: [
                 "Cold Wind Blows",
                 "Talkin' 2 Myself",
@@ -55,6 +57,9 @@ export default function App() {
             },
           }}
         />
+      </div>
+      <div id="form">
+          <Form />
       </div>
     </>
   );
