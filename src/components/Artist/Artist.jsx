@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Album from "./Album";
+import Album from "../Album/Album";
 import "./Artist.css";
 
 export default function Artist({ group, name, desc, album }) {

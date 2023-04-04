@@ -26,7 +26,7 @@ export default function Album({ album }) {
           return <li>{song}</li>;
         })}
       </ul>
-      <p className="likes">
+      <div className="likes">
         Likes: {counter}
         <div>
           <i
@@ -42,7 +42,7 @@ export default function Album({ album }) {
             }`}
           ></i>
         </div>
-      </p>
+      </div>
     </>
   );
 }

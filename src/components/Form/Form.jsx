@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-export default function AlbumForm() {
+export default function AlbumForm({albumInfo, setAlbumInfo}) {
   const [group, setGroup] = useState("");
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
@@ -21,15 +21,19 @@ export default function AlbumForm() {
         albumSongs,
       },
     };
+
+    setAlbumInfo(albumInfo => [...albumInfo, newAlbum])
+
+    e.target.reset()
   };
 
   return (
+    
     <form onSubmit={handleSubmit}>
-      <div>   
+      <div>
         <label>
           <input
             type="text"
-            value={group}
             placeholder="Group/Artist"
             onChange={(e) => setGroup(e.target.value)}
           />
@@ -37,19 +41,20 @@ export default function AlbumForm() {
         <label>
           <input
             type="text"
-            value={name}
             placeholder="Album/Song"
             onChange={(e) => setName(e.target.value)}
           />
         </label>
       </div>
       <label>
-        <textarea placeholder="Description" value={desc} onChange={(e) => setDesc(e.target.value)} />
+        <textarea
+          placeholder="Description"
+          onChange={(e) => setDesc(e.target.value)}
+        />
       </label>
       <label>
         <input
           type="text"
-          value={albumCover}
           placeholder="Album/Song cover"
           onChange={(e) => setAlbumCover(e.target.value)}
         />
@@ -57,7 +62,6 @@ export default function AlbumForm() {
       <label>
         <input
           type="text"
-          value={release}
           placeholder="Release date"
           onChange={(e) => setRelease(e.target.value)}
         />
@@ -65,7 +69,6 @@ export default function AlbumForm() {
       <label>
         <textarea
           placeholder="Songs"
-          value={albumSongs.join("\n")}
           onChange={(e) =>
             setAlbumSongs(
               e.target.value.split("\n").filter((song) => song !== "")

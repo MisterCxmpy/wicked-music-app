@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import Artist from "./Artist";
-import Form from "./Form";
+import Artist from "./components/Artist/Artist";
+import Form from "./components/Form/Form";
 import "./App.css";
 
 export default function App() {
+  const [albumInfo, setAlbumInfo] = useState([]);
+
   return (
     <>
       <h1 id="title">Wicked Music App</h1>
@@ -12,7 +14,7 @@ export default function App() {
           {...{
             group: "Linkin Park",
             name: "Minutes to Midnight",
-            desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illo eligendi, dolor fugit tempora ad quae rerum, laudantium iste voluptates qui harum ea quaerat. Necessitatibus numquam amet aliquam! Libero, quaerat.",
+            desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illo eligendi, dolor fugit tempora ad quae rerum, laudantium iste voluptates qui harum ea quaerat. Necessitatibus numquam amet aliquam! Libero, quaerat.",
             album: {
               albumCover:
                 "https://upload.wikimedia.org/wikipedia/en/7/7a/Minutes_to_Midnight_cover.jpg",
@@ -31,7 +33,7 @@ export default function App() {
           {...{
             group: "Eminem",
             name: "Recovery",
-            desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illo eligendi, dolor fugit tempora ad quae rerum, laudantium iste voluptates qui harum ea quaerat. Necessitatibus numquam amet aliquam! Libero, quaerat.",
+            desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illo eligendi, dolor fugit tempora ad quae rerum, laudantium iste voluptates qui harum ea quaerat. Necessitatibus numquam amet aliquam! Libero, quaerat.",
             album: {
               albumCover:
                 "https://upload.wikimedia.org/wikipedia/en/6/60/Recovery_Album_Cover.jpg",
@@ -57,9 +59,26 @@ export default function App() {
             },
           }}
         />
+        {albumInfo.map((album) => {
+          return (
+            <Artist
+              {...{
+                group: album.group,
+                name: album.name,
+                desc: album.desc,
+                album: {
+                  albumCover:
+                  album.album.albumCover,
+                  release: album.album.release,
+                  albumSongs: album.album.albumSongs,
+                },
+              }}
+            />
+          );
+        })}
       </div>
       <div id="form">
-          <Form />
+        <Form albumInfo={albumInfo} setAlbumInfo={setAlbumInfo} />
       </div>
     </>
   );
